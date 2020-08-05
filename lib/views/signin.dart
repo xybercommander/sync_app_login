@@ -47,16 +47,16 @@ class _SignInState extends State<SignIn> {
                               borderRadius: BorderRadius.circular(30)
                             ),                  
                             child: TextFormField(
-                              validator: (email) {
-                                    return RegExp(
-                                     r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+"
-                                   ).hasMatch(email) ?
-                                     null :
-                                     "Please provide a valid email id";
-                                  },
+                              // validator: (email) {
+                              //       return RegExp(
+                              //        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+"
+                              //      ).hasMatch(email) ?
+                              //        null :
+                              //        "Please provide a valid email id";
+                              //     },
                               decoration: InputDecoration(
                                 hintText: "Email",
-                                hintStyle: TextStyle(color: Colors.black),
+                                hintStyle: TextStyle(color: Colors.black, fontFamily: "Quicksand"),
                                 border: InputBorder.none
                               ),
                             ),
@@ -73,14 +73,14 @@ class _SignInState extends State<SignIn> {
                               borderRadius: BorderRadius.circular(30)
                             ),                  
                             child: TextFormField(
-                              validator: (password){
-                                return password.length > 6 ?
-                                  null : 
-                                  "Please provide a password which has more than 6 characters";
-                              },
+                              // validator: (password){
+                              //   return password.length > 6 ?
+                              //     null : 
+                              //     "Please provide a password which has more than 6 characters";
+                              // },
                               decoration: InputDecoration(
                                 hintText: "Password",
-                                hintStyle: TextStyle(color: Colors.black),
+                                hintStyle: TextStyle(color: Colors.black, fontFamily: "Quicksand"),
                                 border: InputBorder.none
                               ),
                             ),
@@ -102,7 +102,7 @@ class _SignInState extends State<SignIn> {
                           ),
                           borderRadius: BorderRadius.circular(30)
                         ),
-                        child: Text("Sign In", style: TextStyle(color: Colors.white),),
+                        child: Text("Sign In", style: TextStyle(color: Colors.white, fontFamily: "Quicksand-Medium"),),
                       ),
                   ),
                   SizedBox(height: 10,),
