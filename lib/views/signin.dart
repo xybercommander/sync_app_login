@@ -45,14 +45,7 @@ class _SignInState extends State<SignIn> {
                             border: Border.all(width: 1, color: Colors.black),
                             borderRadius: BorderRadius.circular(30)
                           ),                  
-                          child: TextFormField(
-                            // validator: (email) {
-                            //       return RegExp(
-                            //        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+"
-                            //      ).hasMatch(email) ?
-                            //        null :
-                            //        "Please provide a valid email id";
-                            //     },
+                          child: TextFormField(                            
                             decoration: InputDecoration(
                               hintText: "Email",
                               hintStyle: TextStyle(color: Colors.black, fontFamily: "Quicksand"),
@@ -71,12 +64,7 @@ class _SignInState extends State<SignIn> {
                             border: Border.all(width: 1, color: Colors.black),
                             borderRadius: BorderRadius.circular(30)
                           ),                  
-                          child: TextFormField(
-                            // validator: (password){
-                            //   return password.length > 6 ?
-                            //     null : 
-                            //     "Please provide a password which has more than 6 characters";
-                            // },
+                          child: TextFormField(                            
                             decoration: InputDecoration(
                               hintText: "Password",
                               hintStyle: TextStyle(color: Colors.black, fontFamily: "Quicksand"),
