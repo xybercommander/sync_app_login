@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/screenutil.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:sync_app_login/widgets/loginWidgets.dart';
 
 class SignIn extends StatefulWidget {  
   @override
@@ -13,7 +14,7 @@ class _SignInState extends State<SignIn> {
     
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.init(context);
+    ScreenUtil.init(context, width: MediaQuery.of(context).size.width, height: MediaQuery.of(context).size.height);
     return Scaffold(      
       body: SingleChildScrollView(
         child: Container(
@@ -23,13 +24,13 @@ class _SignInState extends State<SignIn> {
             child: Column(              
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                SizedBox(height: 70,),
+                SizedBox(height: ScreenUtil().setHeight(50),),
                 Container(            
-                  width: 170,
-                  height: 207,
+                  width: ScreenUtil().setWidth(170),
+                  height: ScreenUtil().setHeight(207),
                   child: Image.asset("assets/images/Logo@3x.png"),
                 ),
-                SizedBox(height: 45,),
+                SizedBox(height: ScreenUtil().setHeight(45),),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 40),
                   child: Form(
@@ -37,67 +38,44 @@ class _SignInState extends State<SignIn> {
                     child: Column(
                       children: [
                         // Email address
-                        Container(
-                          padding: EdgeInsets.symmetric(horizontal: 20),
-                          width: 296,
-                          height: 52,                      
-                          decoration: BoxDecoration(                        
-                            border: Border.all(width: 1, color: Colors.black),
-                            borderRadius: BorderRadius.circular(30)
-                          ),
-                          child: TextFormField(                            
-                            decoration: InputDecoration(
-                              hintText: "Email",
-                              hintStyle: TextStyle(color: Colors.black, fontFamily: "Quicksand"),
-                              border: InputBorder.none,                              
-                            ),
-                            style: TextStyle(color: Colors.black, fontFamily: "Quicksand"),
-                          ),
-                        ),
+                        textFieldLoginInput("Email Address"),
                         SizedBox(height: 10,),
                         // Password
-                        Container(
-                          padding: EdgeInsets.symmetric(horizontal: 20),
-                          width: 296,
-                          height: 52,                      
-                          decoration: BoxDecoration(
-                            // color: Colors.redAccent,
-                            border: Border.all(width: 1, color: Colors.black),
-                            borderRadius: BorderRadius.circular(30)
-                          ),                  
-                          child: TextFormField(                            
-                            decoration: InputDecoration(
-                              hintText: "Password",
-                              hintStyle: TextStyle(color: Colors.black, fontFamily: "Quicksand"),
-                              border: InputBorder.none
-                            ),
-                            style: TextStyle(color: Colors.black, fontFamily: "Quicksand"),
-                          ),
-                        )
+                        textFieldLoginInput("Password"),
                       ],
                     ),
                   ),
                 ),
-                SizedBox(height: 10,),
+                SizedBox(height: ScreenUtil().setHeight(10),),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 40),
-                  child: Container(
-                      alignment: Alignment.center,
-                      width: 296,
-                      height: 52,                     
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [Hexcolor("#EF5A53"), Hexcolor("#F48348"), Hexcolor("#F48348")]
+                  child: Builder(
+                    builder: (context) => GestureDetector(
+                      onTap: () {
+                        print("Logged in");
+                        Scaffold.of(context).showSnackBar(SnackBar(
+                          content: Text("Logging in"),
+                        ));
+                      },
+                      child: Container(
+                          alignment: Alignment.center,
+                          width: ScreenUtil().setWidth(296),
+                          height: ScreenUtil().setHeight(52),                      
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: [Hexcolor("#EF5A53"), Hexcolor("#F48348"), Hexcolor("#F48348")]
+                            ),
+                            borderRadius: BorderRadius.circular(30)
+                          ),
+                          child: Text("Login", style: TextStyle(fontSize: ScreenUtil().setSp(16), color: Colors.white, fontFamily: "Quicksand-Medium"),),
                         ),
-                        borderRadius: BorderRadius.circular(30)
-                      ),
-                      child: Text("Login", style: TextStyle(fontSize: 16, color: Colors.white, fontFamily: "Quicksand-Medium"),),
-                    ),
+                    ),                    
+                  ),
                 ),
-                SizedBox(height: 10,),
+                SizedBox(height: ScreenUtil().setHeight(10),),
                 Center(child: Text("Forgot Password?", style: TextStyle(fontFamily: "Quicksand-Medium"),),),
-                SizedBox(height: 50,),
-                Center(child: Text("Create a new account", style: TextStyle(fontSize: 16, fontFamily: "Quicksand-Bold"),),),
+                SizedBox(height: ScreenUtil().setHeight(50),),
+                Center(child: Text("Create a new account", style: TextStyle(fontSize: ScreenUtil().setSp(16), fontFamily: "Quicksand-Bold"),),),
               ],
             ),
           ),
