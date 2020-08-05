@@ -23,11 +23,11 @@ class _SignInState extends State<SignIn> {
             child: Column(              
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                SizedBox(height: 85,),
+                SizedBox(height: 70,),
                 Container(            
                   width: 170,
                   height: 207,
-                  child: Image.asset("assets/images/Logo.png"),
+                  child: Image.asset("assets/images/Logo@3x.png"),
                 ),
                 SizedBox(height: 45,),
                 Padding(
@@ -44,13 +44,14 @@ class _SignInState extends State<SignIn> {
                           decoration: BoxDecoration(                        
                             border: Border.all(width: 1, color: Colors.black),
                             borderRadius: BorderRadius.circular(30)
-                          ),                  
+                          ),
                           child: TextFormField(                            
                             decoration: InputDecoration(
                               hintText: "Email",
                               hintStyle: TextStyle(color: Colors.black, fontFamily: "Quicksand"),
-                              border: InputBorder.none
+                              border: InputBorder.none,                              
                             ),
+                            style: TextStyle(color: Colors.black, fontFamily: "Quicksand"),
                           ),
                         ),
                         SizedBox(height: 10,),
@@ -70,6 +71,7 @@ class _SignInState extends State<SignIn> {
                               hintStyle: TextStyle(color: Colors.black, fontFamily: "Quicksand"),
                               border: InputBorder.none
                             ),
+                            style: TextStyle(color: Colors.black, fontFamily: "Quicksand"),
                           ),
                         )
                       ],
